@@ -1,0 +1,12 @@
+/* Home page, variant 2: alternating white -> teal vertical gradients (same as the live site's contact page sections). */
+.home2{--teal:#368487}
+.home2 .treatments,.home2 .results,.home2 .clinics{position:relative;background:linear-gradient(#fff,var(--teal))}
+.home2 .treatments,.home2 .results{padding-bottom:clamp(64px,7vw,110px)}
+.home2 .clinics{padding-bottom:clamp(28px,3vw,48px)}
+/* curved edge where a teal section hands over to a light one */
+.home2 .treatments:after,.home2 .results:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:clamp(34px,4.4vw,64px);z-index:3;pointer-events:none;background-repeat:no-repeat;background-size:100% 100%}
+.home2 .treatments:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 28c200 44 380 44 560 12s360-44 540-12 250 26 340 8v24H0Z' fill='%23f8fcff'/%3E%3C/svg%3E")}
+.home2 .results:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 8c90 18 190 18 340-8s360 44 560 28 360-40 540-4v36H0Z' fill='%23f6fbff'/%3E%3C/svg%3E")}
+/* keep headings readable over the lighter top; light text only where a section copy sits on the teal */
+.home2 .clinics .section-lead{color:#4d6a73}
+.home2 .clinics .pill-link{background:#fff}
