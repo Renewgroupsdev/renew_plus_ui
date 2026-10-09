@@ -90,16 +90,46 @@
   const rider = box.querySelector(".rd-rider");
   const cols = [...box.querySelectorAll(".rd-col")];
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+<<<<<<< HEAD
   let pausedUntil = 0, hovering = false;
   const pause = ms => { pausedUntil = performance.now() + ms; };
 
+=======
+  let pausedUntil = 0, stopped = false;
+  const pause = ms => { pausedUntil = performance.now() + ms; };
+
+  /* pause / resume: a toggle button plus "roadmap:pause", "roadmap:resume" and "roadmap:toggle" events
+     (dispatch them on #rdScroll or document); "roadmap:paused" / "roadmap:resumed" are fired when the state changes */
+  const toggle = document.querySelector("[data-rd-toggle]");
+  function setStopped(on) {
+    if (on === stopped) return;
+    stopped = on;
+    box.classList.toggle("is-stopped", on);
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(on));
+      toggle.setAttribute("aria-label", on ? "Resume roadmap animation" : "Pause roadmap animation");
+      toggle.title = on ? "Resume" : "Pause";
+    }
+    box.dispatchEvent(new CustomEvent(on ? "roadmap:paused" : "roadmap:resumed", { bubbles: true }));
+  }
+  const onEvt = (name, fn) => { box.addEventListener(name, fn); document.addEventListener(name, fn); };
+  onEvt("roadmap:pause", () => setStopped(true));
+  onEvt("roadmap:resume", () => setStopped(false));
+  onEvt("roadmap:toggle", () => setStopped(!stopped));
+  toggle?.addEventListener("click", () => setStopped(!stopped));
+
+>>>>>>> master
   document.querySelectorAll("[data-rd]").forEach(btn => btn.addEventListener("click", () => {
     pause(7000);
     box.scrollBy({ left: +btn.dataset.rd * Math.max(400, box.clientWidth * .7), behavior: "smooth" });
   }));
+<<<<<<< HEAD
   ["wheel", "touchstart", "pointerdown", "keydown"].forEach(ev => box.addEventListener(ev, () => pause(7000), { passive: true }));
   box.addEventListener("mouseenter", () => { hovering = true; });
   box.addEventListener("mouseleave", () => { hovering = false; pause(1200); });
+=======
+  ["keydown"].forEach(ev => box.addEventListener(ev, () => pause(7000), { passive: true }));
+>>>>>>> master
 
   if (reduce || !path || !rider || !cols.length || getComputedStyle(rider).display === "none") return;
 
@@ -119,8 +149,13 @@
 
   function place(len) {
     const p = path.getPointAtLength(len);
+<<<<<<< HEAD
     rider.style.transform = "translate(" + (p.x - 22) + "px," + (p.y - 22) + "px)";
     if (performance.now() > pausedUntil && !hovering) {
+=======
+    rider.style.transform = "translate(" + (p.x - 24) + "px," + (p.y - 24) + "px)";
+    if (performance.now() > pausedUntil && !stopped) {
+>>>>>>> master
       box.scrollLeft = Math.max(0, Math.min(p.x - box.clientWidth / 2, box.scrollWidth - box.clientWidth));
     }
   }
@@ -135,7 +170,11 @@
 
   function tick(now) {
     const dt = Math.min(now - last, 80); last = now;
+<<<<<<< HEAD
     if (visible && !hovering && now > pausedUntil && phase !== "reset") {
+=======
+    if (visible && !stopped && now > pausedUntil && phase !== "reset") {
+>>>>>>> master
       elapsed += dt;
       if (phase === "move") {
         const t = Math.min(elapsed / MOVE, 1);
@@ -153,6 +192,10 @@
   place(0);
   new IntersectionObserver(es => es.forEach(e => {
     visible = e.isIntersecting;
+<<<<<<< HEAD
   }), { threshold: .25 }).observe(box);
+=======
+  }), { threshold: 0 }).observe(box);
+>>>>>>> master
   requestAnimationFrame(tick);
 })();

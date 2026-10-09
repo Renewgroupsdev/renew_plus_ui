@@ -268,3 +268,13 @@
   .bp.reveal:nth-child(odd), .bp.reveal:nth-child(even) { transform: translateY(28px) }
 }
 .bp:nth-child(even) .bp-img .tr-tag { left: auto; right: 14px }
+<<<<<<< HEAD
+=======
+
+/* 3D award images: show the whole trophy on a soft backdrop */
+.aw-item figure{background:radial-gradient(circle at 50% 40%,#fff,#eef6fb)}
+.aw-item img{object-fit:contain;padding:10px;mix-blend-mode:multiply}
+
+/* award names use the site heading style (script face, heading blue) */
+.aw-item h3{font-family:var(--script);font-weight:700;font-size:clamp(19px,1.8vw,24px);line-height:1.15;color:#2557b3;letter-spacing:0}
+>>>>>>> master

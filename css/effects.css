@@ -22,12 +22,18 @@
 @keyframes fxSpin{to{transform:rotate(360deg)}}
 @keyframes fxFloat{50%{transform:translateY(14px) scale(1.08)}}
 
+<<<<<<< HEAD
 /* hair: flowing strands */
 [data-theme=hair] .pg-hero:before,[data-theme=hair] .pg-alt:after{background:
   repeating-linear-gradient(115deg,rgba(var(--fx-b),.055) 0 2px,transparent 2px 26px),
   repeating-radial-gradient(circle at 92% -10%,transparent 0 34px,rgba(var(--fx-g),.12) 34px 36px)}
 /* skin: bubbles / droplets */
 [data-theme=skin] .pg-hero:before,[data-theme=skin] .pg-alt:after{background:
+=======
+/* skin: bubbles / droplets */
+/* hair + skin share the bubble / droplet motif */
+[data-theme=hair] .pg-hero:before,[data-theme=hair] .pg-alt:after,[data-theme=skin] .pg-hero:before,[data-theme=skin] .pg-alt:after{background:
+>>>>>>> master
   radial-gradient(circle at 12% 78%,transparent 0 22px,rgba(var(--fx-c),.14) 23px 24px,transparent 25px),
   radial-gradient(circle at 34% 24%,transparent 0 12px,rgba(var(--fx-g),.22) 13px 14px,transparent 15px),
   radial-gradient(circle at 58% 82%,transparent 0 30px,rgba(var(--fx-g),.14) 31px 32px,transparent 33px),
@@ -250,3 +256,123 @@
 
 /* Mobile: drop the portrait photo in the "Take the first step" band */
 @media(max-width:640px){.cta-photo{display:none}}
+<<<<<<< HEAD
+=======
+
+/* ---------- Full-width layout: the design now scales with the screen up to 1920px (was capped at 1440px) ---------- */
+@media(min-width:641px){
+  :root{--p:calc(min(100vw,1920px)/773)}
+  .page,.nav-wrap{max-width:1920px}
+  .footer-grid,.footer-bottom{max-width:none}
+  .pg .inner{width:min(1560px,calc(100% - 12vw))}
+}
+@media(min-width:1921px){body{background:#f6fbff}}
+
+/* ---------- Patient Journey: effect only (layout untouched) - a small marker travels the dashed line and lights each step ---------- */
+@media(min-width:641px){
+  .journey-line{--x:12.5%;--prog:0%}
+  /* green progress line laid over the existing dashed line */
+  .journey-line:after{content:"";position:absolute;left:12.5%;top:calc(var(--p)*17);width:var(--prog);height:0;border-top:2px solid #2fae6b;pointer-events:none;z-index:0}
+  /* the marker */
+  .rail-train{position:absolute;z-index:3;left:var(--x);top:calc(var(--p)*17);width:calc(var(--p)*26);height:calc(var(--p)*26);min-width:30px;min-height:30px;transform:translate(-50%,-50%);
+    display:grid;place-items:center;border-radius:50%;background:#fff;border:2px solid #2fae6b;box-shadow:0 0 0 4px rgba(47,174,107,.18),0 3px 8px rgba(20,60,80,.25);pointer-events:none}
+  .rail-train img{width:100%;height:100%;border-radius:50%;object-fit:contain}
+  .rail-train{transition:opacity .45s,transform .45s}
+  .is-done .rail-train{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+  .rail-smile{position:absolute;z-index:4;left:var(--end);top:calc(var(--p)*17);width:calc(var(--p)*34);height:calc(var(--p)*34);min-width:38px;min-height:38px;transform:translate(-50%,-50%) scale(.2);opacity:0;pointer-events:none;transition:opacity .5s .25s,transform .6s .25s cubic-bezier(.2,.9,.3,1.5)}
+  .rail-smile img{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 8px rgba(20,60,80,.3))}
+  .is-done .rail-smile{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .rs-heart{position:absolute;left:50%;top:0;font-style:normal;color:#ff3d6e;font-size:calc(var(--p)*9);line-height:1;opacity:0;pointer-events:none}
+  .rs-h2{color:#ff6b93;font-size:calc(var(--p)*7)}.rs-h3{font-size:calc(var(--p)*6)}
+  .is-done .rs-h1{animation:rsHeart 2s .6s infinite ease-out;--dx:-22px}
+  .is-done .rs-h2{animation:rsHeart 2s 1.2s infinite ease-out;--dx:4px}
+  .is-done .rs-h3{animation:rsHeart 2s 1.8s infinite ease-out;--dx:26px}
+  @keyframes rsHeart{0%{opacity:0;transform:translate(var(--dx),0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-46px) scale(1.15)}}
+  .journey-step b{transition:box-shadow .4s}
+  /* hearts float up from each step badge as the marker arrives */
+  .burst-heart{position:absolute;left:50%;top:50%;font-style:normal;line-height:1;pointer-events:none;z-index:3;opacity:0;animation:burstHeart .95s ease-out forwards}
+  @keyframes burstHeart{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}15%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by))) scale(1.1)}}
+  .journey-step.is-arrived b{box-shadow:0 0 0 2px #bde4d3,0 0 0 calc(var(--p)*5) rgba(47,174,107,.2),0 calc(var(--p)*4) calc(var(--p)*10) rgba(29,138,76,.3)}
+}
+@media(max-width:640px){.rail-train,.rail-smile{display:none}}
+
+
+/* card images: larger radius, soft shadow, bottom gradient; no white corner notch */
+.tr-card{border-radius:26px;box-shadow:0 12px 30px rgba(20,70,130,.12)}
+.tr-photo{margin:10px 10px 0;border-radius:20px;box-shadow:0 8px 20px rgba(20,70,130,.16)}
+.tr-photo:after,.tr-card:hover .tr-photo:after,.tr-grid--sm .tr-photo:after,.tr-grid--sm .tr-card:hover .tr-photo:after{width:100%;height:55%;left:0;right:0;bottom:0;clip-path:none;background:linear-gradient(180deg,transparent,rgba(6,32,62,.45))}
+.tr-grid--sm .tr-card{border-radius:22px}
+
+/* ---------- Treatment detail pattern: intro, steps, two-box, compare table, FAQ ---------- */
+.td-intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,64px);align-items:center}
+.td-intro-grid .btn{margin-top:18px}
+.td-lead{margin-top:14px;padding-left:14px;border-left:3px solid rgb(var(--fx-g));font-style:italic;color:var(--muted)}
+.td-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:none}
+.td-steps li{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 22px 22px;box-shadow:0 8px 24px rgba(20,70,130,.08)}
+.td-steps b{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;color:#fff;font-size:16px;background:linear-gradient(135deg,rgb(var(--fx-g)),rgb(var(--fx-c)));margin-bottom:12px}
+.td-steps p{margin:0;font-size:15px;color:var(--muted)}
+.td-box{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(22px,3vw,36px);box-shadow:0 10px 30px rgba(20,70,130,.08)}
+.td-benefits--list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px;padding:0;list-style:none}
+.td-benefits--list li{display:flex;gap:12px;align-items:flex-start;background:none;box-shadow:none;border:0;padding:0}
+.td-table-wrap{overflow-x:auto;background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(20,70,130,.1)}
+.td-table{width:100%;border-collapse:collapse;min-width:560px;text-align:left}
+.td-table th{background:#0a4a88;color:#fff;font-weight:600;padding:14px 18px;font-size:14px}
+.td-table td{padding:14px 18px;border-top:1px solid var(--line);font-size:15px}
+.td-table tr.is-current td{background:rgba(var(--fx-g),.12);font-weight:600}
+.td-faq-wrap .faq{max-width:860px;margin:0 auto}
+@media(max-width:900px){.td-intro-grid{grid-template-columns:1fr}}
+
+/* ---------- Inner-page banners: same compact design as the About banner ---------- */
+.pg-hero{min-height:clamp(190px,20vw,270px);display:flex;align-items:center;padding:0;background:#f3faff}
+.pg .pg-hero .inner{width:calc(100% - var(--p)*74);margin:0 auto;padding:clamp(20px,2.6vw,34px) 0;z-index:2}
+.pg .pg-hero .eyebrow:before{display:none}
+.pg-hero h1{max-width:none}
+.pg-hero .inner>*:not(.td-hero-grid),.pg-hero .td-hero-grid>div{max-width:min(600px,58%)}
+.pg-hero .td-hero-grid{display:block}
+.pg-hero-bg,.td-hero-bg{position:absolute;inset:0;width:auto;background-size:cover;background-position:right 22%;background-repeat:no-repeat;-webkit-mask-image:none;mask-image:none;transform:none}
+.pg-hero:before,[data-theme] .pg-hero:before{display:none!important}
+.pg-hero:after,.td-hero:after{left:0;right:0;top:0;bottom:0;height:auto;z-index:1;background:linear-gradient(90deg,#f3faff 0,#f3faff 32%,rgba(243,250,255,0) 62%)}
+.pg-hero .inner:before,.pg-hero .inner:after{display:none}
+.pg-hero .eyebrow{font-size:clamp(11px,1vw,14px)}
+.pg-hero h1{font-size:clamp(30px,3.4vw,48px);line-height:1.1}
+.pg-hero-copy{margin:10px 0 14px;font-size:clamp(13px,1.1vw,16px)}
+.pg-hero .crumbs{margin-bottom:10px}
+.pg-hero .td-actions{margin-top:12px}
+.pg-hero .btn{height:38px;font-size:13px;padding:0 20px}
+@media(max-width:620px){
+  .pg-hero .inner>*:not(.td-hero-grid),.pg-hero .td-hero-grid>div{max-width:none}
+  .pg-hero-bg,.td-hero-bg{background-position:70% center;opacity:.5}
+  .pg-hero:after,.td-hero:after{background:linear-gradient(90deg,#f3faff 0,rgba(243,250,255,.55) 100%)}
+}
+@media(max-width:640px){.pg .pg-hero .inner{width:90%}}
+
+/* footer: contact icons + social links (column 1) */
+.footer-grid .footer-contact .fc-line{display:flex;align-items:center;gap:10px}
+.footer-contact .fc-line svg{flex:none;width:18px;height:18px;fill:none;stroke:#8fe0b6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.footer-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.footer-grid .footer-contact .footer-social a{display:grid;place-items:center;width:38px;height:38px;margin:0;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.32);color:#fff;transition:background .25s,transform .25s,border-color .25s}
+.footer-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.footer-grid .footer-contact .footer-social a:hover{background:linear-gradient(135deg,#1f4fa8,#1d8a4c);border-color:transparent;transform:translateY(-3px)}
+
+/* Home stats strip: light frosted-glass gradient that blends into the hero background */
+.trust-strip{background:linear-gradient(100deg,rgba(255,255,255,.66) 0%,rgba(228,247,241,.52) 52%,rgba(222,238,252,.46) 100%);-webkit-backdrop-filter:blur(14px) saturate(1.35);backdrop-filter:blur(14px) saturate(1.35);border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 32px rgba(20,70,130,.10),inset 0 1px 0 rgba(255,255,255,.9)}
+.trust-strip>div+div{border-left:1px solid rgba(37,87,179,.12)}
+.trust-strip .ico-wrap{background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(207,238,225,.55));border:1px solid rgba(255,255,255,.9);box-shadow:0 4px 10px rgba(29,138,76,.12);color:#1c8a4a}
+.trust-strip strong{color:#1d4a96}
+.trust-strip span{color:#4f6b82}
+
+/* Stats strip lives inside the slider, along its bottom edge */
+@media(min-width:641px){
+  .hero .trust-strip{position:absolute;z-index:7;left:50%;transform:translateX(-50%);bottom:calc(var(--p)*12);width:calc(100% - var(--p)*74);height:calc(var(--p)*40);margin:0;padding:0 calc(var(--p)*10);border-radius:calc(var(--p)*20)}
+  .hero .trust-strip .ico-wrap{width:calc(var(--p)*24);height:calc(var(--p)*24);font-size:calc(var(--p)*12)}
+  .hero .trust-strip strong{font-size:calc(var(--p)*9.6)}
+  .hero .trust-strip span{font-size:calc(var(--p)*6);margin-top:calc(var(--p)*1)}
+  .hero .trust-strip>div{justify-content:center;gap:calc(var(--p)*6);padding-left:0}
+  .hero-controls{top:calc(var(--p)*346)}
+}
+
+/* the slider photo has a baked-in stats pill at its bottom: fade the photo out before it, the live strip replaces it */
+@media(min-width:641px){
+  .hero-photo{-webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 12%,#000 34%),linear-gradient(180deg,transparent 0,#000 9%,#000 66%,transparent 79%);mask-image:linear-gradient(90deg,transparent 0,transparent 12%,#000 34%),linear-gradient(180deg,transparent 0,#000 9%,#000 66%,transparent 79%)}
+}
+>>>>>>> master

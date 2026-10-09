@@ -152,7 +152,11 @@ svg.ico {
 }
 
 .brand img {
+<<<<<<< HEAD
   height: calc(var(--p)*54);
+=======
+  height: calc(var(--p)*40);
+>>>>>>> master
   width: auto
 }
 
@@ -859,6 +863,22 @@ svg.ico {
   background-image: url("../assets/avatars/avatar-arun.jpg")
 }
 
+<<<<<<< HEAD
+=======
+.avatar--four {
+  background-image: url("../assets/avatars/avatar-meena.jpg")
+}
+
+.avatar--five {
+  background-image: url("../assets/avatars/avatar-ramesh.jpg")
+}
+
+.avatar--six {
+  background-image: url("../assets/avatars/avatar-divya.jpg")
+}
+
+
+>>>>>>> master
 .t-body p {
   font-size: calc(var(--p)*7.2);
   line-height: 1.8;
@@ -908,6 +928,95 @@ svg.ico {
   padding-bottom: calc(var(--p)*0)
 }
 
+<<<<<<< HEAD
+=======
+/* Clinics carousel */
+.clinic-carousel {
+  position: relative
+}
+
+.clinic-track {
+  --gap: calc(var(--p)*14.7);
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: calc(var(--p)*6) 2px calc(var(--p)*16)
+}
+
+.clinic-track::-webkit-scrollbar {
+  display: none
+}
+
+.clinic-track .clinic-card {
+  flex: 0 0 calc((100% - var(--gap)*3)/4);
+  scroll-snap-align: start
+}
+
+/* placeholder when a clinic has no photo */
+.clinic-photo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--p)*5);
+  background: linear-gradient(145deg, #eaf6ff, #e3f6ec);
+  color: #15408a
+}
+
+.clinic-photo--empty .ico {
+  width: calc(var(--p)*26);
+  height: calc(var(--p)*26);
+  min-width: 30px;
+  min-height: 30px;
+  color: #4fb88a;
+  opacity: .85
+}
+
+.clinic-photo--empty span {
+  font-size: calc(var(--p)*7.5);
+  font-weight: 600;
+  opacity: .7
+}
+
+.cc-nav {
+  position: absolute;
+  top: calc(var(--p)*44);
+  z-index: 3;
+  width: calc(var(--p)*24);
+  height: calc(var(--p)*24);
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  border: 1px solid #4fb88a;
+  background: #fff;
+  color: var(--green);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(20, 70, 130, .18);
+  transition: opacity .25s, transform .25s
+}
+
+.cc-nav:hover:not(:disabled) {
+  transform: scale(1.08)
+}
+
+.cc-nav:disabled {
+  opacity: .35;
+  cursor: default
+}
+
+.cc-prev {
+  left: -14px
+}
+
+.cc-next {
+  right: -14px
+}
+
+>>>>>>> master
 .clinic-card {
   background: #fff;
   border: 1px solid var(--line);
@@ -2411,9 +2520,30 @@ svg.ico {
     padding-bottom: 24px
   }
 
+<<<<<<< HEAD
   .clinic-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px
+=======
+  .clinic-track {
+    --gap: 12px
+  }
+
+  .clinic-track .clinic-card {
+    flex-basis: calc((100% - var(--gap))/2)
+  }
+
+  .cc-nav {
+    top: 50px
+  }
+
+  .cc-prev {
+    left: -6px
+  }
+
+  .cc-next {
+    right: -6px
+>>>>>>> master
   }
 
   .clinic-photo {
@@ -2770,7 +2900,12 @@ svg.ico {
 }
 
 .loader-box img {
+<<<<<<< HEAD
   width: 82px;
+=======
+  width: 92px;
+  mix-blend-mode: multiply;
+>>>>>>> master
   height: auto;
   animation: loaderPulse 1.6s ease-in-out infinite
 }

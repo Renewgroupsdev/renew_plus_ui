@@ -3,7 +3,11 @@
 const hair = [
   {
     slug: "gfc-treatment", title: "GFC Treatment", short: "Growth Factor Concentrate",
+<<<<<<< HEAD
     img: "assets/treatments/gfc.jpg", icon: "i-cell", kind: "Non-surgical",
+=======
+    img: "assets/treatments/gfc-treatment.jpg", icon: "i-cell", kind: "Non-surgical",
+>>>>>>> master
     tagline: "Concentrated growth factors from your own blood to wake up weak hair follicles.",
     card: "A refined, concentrated growth-factor serum that reduces hair fall and builds density.",
     overview: "GFC (Growth Factor Concentrate) is a non-surgical hair restoration treatment that uses concentrated growth factors derived from your own blood to stimulate hair follicles, reduce hair loss and improve hair density over time.",
@@ -20,7 +24,11 @@ const hair = [
   },
   {
     slug: "prp-treatment", title: "PRP Treatment", short: "Platelet-Rich Plasma",
+<<<<<<< HEAD
     img: "assets/treatments/prp.jpg", icon: "i-drop", kind: "Non-surgical",
+=======
+    img: "assets/treatments/prp-treatment.jpg", icon: "i-drop", kind: "Non-surgical",
+>>>>>>> master
     tagline: "A natural, non-surgical way to stimulate hair growth using your body’s own platelets.",
     card: "Platelets from your own blood are injected into the scalp to activate hair follicles.",
     overview: "PRP (Platelet-Rich Plasma) hair treatment is a natural, non-surgical solution that uses your body’s own platelets to stimulate hair growth. It is a minimally invasive procedure that targets hair loss, thinning and scalp health concerns.",
@@ -37,7 +45,11 @@ const hair = [
   },
   {
     slug: "fue-hair-treatment", title: "FUE Hair Treatment", short: "Follicular Unit Extraction",
+<<<<<<< HEAD
     img: "assets/treatments/hair-transplant.jpg", icon: "i-hair", kind: "Surgical",
+=======
+    img: "assets/treatments/fue-hair-treatment.jpg", icon: "i-hair", kind: "Surgical",
+>>>>>>> master
     tagline: "Permanent hair restoration that rebuilds a natural hairline with your own follicles.",
     card: "An advanced hair transplant technique with no cuts or stitches and lasting results.",
     overview: "FUE (Follicular Unit Extraction) is an advanced technique that restores your natural hairline using your own follicles. It offers permanent restoration rather than temporary management of hair loss.",
@@ -54,7 +66,11 @@ const hair = [
   },
   {
     slug: "beard-transplant", title: "Beard Transplant", short: "Fuller, natural beard",
+<<<<<<< HEAD
     img: "assets/results/result-hair.jpg", icon: "i-person", kind: "Surgical",
+=======
+    img: "assets/treatments/beard-transplant.jpg", icon: "i-person", kind: "Surgical",
+>>>>>>> master
     tagline: "Your own follicles, placed precisely to create a fuller, natural-looking beard.",
     card: "FUE-based beard restoration for patchy, thin or sparse facial hair.",
     overview: "Beard transplant is an advanced restoration technique that uses your own hair follicles to create a natural-looking, fuller beard that blends with your facial features.",
@@ -71,7 +87,11 @@ const hair = [
   },
   {
     slug: "mesotherapy-hair-treatment", title: "Mesotherapy Hair Treatment", short: "Nutrient-based scalp therapy",
+<<<<<<< HEAD
     img: "assets/treatments/scalp.jpg", icon: "i-scalp", kind: "Non-surgical",
+=======
+    img: "assets/treatments/mesotherapy-hair-treatment.jpg", icon: "i-scalp", kind: "Non-surgical",
+>>>>>>> master
     tagline: "A tailored blend of vitamins and nutrients delivered straight to the scalp.",
     card: "Minimally invasive scalp nutrition that strengthens follicles and reduces hair fall.",
     overview: "Advanced Mesotherapy is a minimally invasive procedure that addresses hair loss and thinning by delivering essential nutrients directly to the scalp, strengthening follicles and promoting regrowth.",
@@ -88,7 +108,11 @@ const hair = [
   },
   {
     slug: "female-hair-transplant", title: "Female Hair Transplant", short: "Designed for women",
+<<<<<<< HEAD
     img: "assets/results/result-prp.jpg", icon: "i-sparkle", kind: "Surgical",
+=======
+    img: "assets/treatments/female-hair-transplant.jpg", icon: "i-sparkle", kind: "Surgical",
+>>>>>>> master
     tagline: "Natural-looking density and hairline restoration, planned around female hair loss patterns.",
     card: "Precision FUE restoration for women with thinning, widening parts or receding hairlines.",
     overview: "Renew Plus offers hair restoration designed specifically for women experiencing hair loss, thinning or a receding hairline, with natural-looking results from precision techniques.",
@@ -108,7 +132,11 @@ const hair = [
 const skin = [
   {
     slug: "hydra-facial-treatment", title: "Hydrafacial Treatment", short: "Cleanse. Exfoliate. Hydrate.",
+<<<<<<< HEAD
     img: "assets/treatments/skin-rejuvenation.jpg", icon: "i-drop", kind: "Facial",
+=======
+    img: "assets/treatments/hydrafacial-treatment.jpg", icon: "i-drop", kind: "Facial",
+>>>>>>> master
     tagline: "A non-invasive facial that deeply cleanses, exfoliates and hydrates – with an instant glow.",
     card: "Deep cleansing and intense hydration with immediate radiance and zero downtime.",
     overview: "Hydrafacial is a non-invasive treatment that deeply cleanses, exfoliates and intensely hydrates your skin, with immediate results and no downtime.",
@@ -125,7 +153,11 @@ const skin = [
   },
   {
     slug: "derma-planing-treatment", title: "Derma Planing Treatment", short: "Instant smoothness",
+<<<<<<< HEAD
     img: "assets/treatments/anti-aging.jpg", icon: "i-face", kind: "Exfoliation",
+=======
+    img: "assets/treatments/dermaplaning-treatment.jpg", icon: "i-face", kind: "Exfoliation",
+>>>>>>> master
     tagline: "Gentle physical exfoliation that removes dead skin and peach fuzz for instantly softer skin.",
     card: "A safe, non-invasive exfoliation that reveals brighter, smoother skin straight away.",
     overview: "Derma planing is a safe, non-invasive exfoliation procedure that gently removes dead skin cells and peach fuzz, revealing brighter and softer skin instantly.",
@@ -142,7 +174,11 @@ const skin = [
   },
   {
     slug: "chemical-peel-treatment", title: "Chemical Peel Treatment", short: "Brighter, smoother skin",
+<<<<<<< HEAD
     img: "assets/treatments/acne-scar.jpg", icon: "i-spot", kind: "Peel",
+=======
+    img: "assets/treatments/chemical-peel-treatment.jpg", icon: "i-spot", kind: "Peel",
+>>>>>>> master
     tagline: "Professional peels that remove damaged skin layers to reveal a brighter, more youthful complexion.",
     card: "Customised peels for acne, pigmentation, dullness and uneven texture.",
     overview: "A chemical peel is a professional skin procedure that uses specialised solutions to exfoliate the outer layer of skin, gently removing damage and revealing a brighter, smoother and more youthful complexion.",
@@ -159,7 +195,11 @@ const skin = [
   },
   {
     slug: "q-switch-laser-treatment", title: "Q Switch Laser Treatment", short: "Pigmentation & dark spots",
+<<<<<<< HEAD
     img: "assets/treatments/laser.jpg", icon: "i-laser", kind: "Laser",
+=======
+    img: "assets/treatments/q-switch-laser-treatment.jpg", icon: "i-laser", kind: "Laser",
+>>>>>>> master
     tagline: "Controlled laser energy that targets excess melanin for clearer, more even skin.",
     card: "A non-invasive laser for melasma, dark spots and uneven skin tone – safe for Indian skin.",
     overview: "Q Switch Laser is an advanced, non-invasive skin procedure that targets excess melanin to treat dark spots, melasma and uneven skin tone, restoring natural clarity with minimal downtime.",
@@ -176,7 +216,11 @@ const skin = [
   },
   {
     slug: "iv-glutathione-treatment", title: "IV Glutathione Treatment", short: "Glow from within",
+<<<<<<< HEAD
     img: "assets/results/result-skin.jpg", icon: "i-sparkle", kind: "IV therapy",
+=======
+    img: "assets/treatments/iv-glutathione-treatment.jpg", icon: "i-sparkle", kind: "IV therapy",
+>>>>>>> master
     tagline: "An antioxidant IV therapy that supports a brighter, more even skin tone and detoxification.",
     card: "Glutathione delivered directly into the bloodstream for brighter, more even skin.",
     overview: "IV Glutathione is an intravenous therapy that delivers the antioxidant glutathione straight into the bloodstream to improve skin appearance and support detoxification. It targets dullness, uneven tone and pigmentation.",
@@ -220,6 +264,7 @@ const gallery = [
   { cat: "Laser & Peels", img: "assets/treatments/laser.jpg", title: "Q Switch laser session", note: "Pigmentation care" },
 ];
 
+<<<<<<< HEAD
 /* PLACEHOLDERS: replace name / year / img with your real awards (put images in assets/awards/). */
 const awards = [1, 2, 3, 4, 5, 6, 7, 8].map(n => ({ name: "Award Name " + n, year: "Year", img: "assets/awards/award-placeholder.svg" }));
 
@@ -238,3 +283,34 @@ const clinics = [
 ];
 
 module.exports = { hair, skin, blogs, gallery, awards, clinics };
+=======
+/* DUMMY awards: replace name / year / img with your real awards (put images in assets/awards/). */
+const awards = [
+  { name: "Best Hair Transplant Clinic", year: "2024", img: "assets/awards/award-1.png" },
+  { name: "Excellence in Skin Care", year: "2024", img: "assets/awards/award-2.png" },
+  { name: "Most Trusted Hair & Skin Brand", year: "2023", img: "assets/awards/award-3.png" },
+  { name: "Patient Choice Award", year: "2023", img: "assets/awards/award-4.png" },
+  { name: "Best Aesthetic Clinic in South India", year: "2022", img: "assets/awards/award-5.png" },
+  { name: "Innovation in Hair Restoration", year: "2022", img: "assets/awards/award-6.png" },
+  { name: "Customer Satisfaction Excellence", year: "2021", img: "assets/awards/award-7.png" },
+  { name: "Emerging Healthcare Brand", year: "2021", img: "assets/awards/award-8.png" }
+];
+
+const clinics = [
+  { slug: "chennai", name: "Chennai", lat: 12.9249, lng: 80.1, area: "Medavakkam", state: "Tamil Nadu", img: "assets/clinics/clinic-chennai.jpg", address: "Second Floor, 4/799, Velachery Main Rd, Near Jeyachandran Textiles, Medavakkam, Chennai, Tamil Nadu - 600100" },
+  { slug: "madurai", name: "Madurai", lat: 9.9252, lng: 78.1198, area: "KK Nagar", state: "Tamil Nadu", img: "assets/clinics/clinic-madurai.jpg", address: "No: 155, Second Floor, 80 Feet Rd, LIG Colony, KK Nagar, Madurai, Tamil Nadu - 625020" },
+  { slug: "coimbatore", name: "Coimbatore", lat: 11.0168, lng: 76.9558, area: "R.S. Puram", state: "Tamil Nadu", img: "assets/clinics/clinic-coimbatore.jpg", address: "No. 36/21A, 4th Floor, Ashirwad Complex, Diwan Bahadur Rd, R.S. Puram, Coimbatore, Tamil Nadu - 641002" },
+  { slug: "bengaluru", name: "Bengaluru", lat: 12.9961, lng: 77.57, area: "Rajaji Nagar", state: "Karnataka", img: "assets/clinics/clinic-bengaluru.jpg", address: "277/42, 1st Floor, BDA 67th Cross Road, 5th Block, Rajaji Nagar, Bengaluru, Karnataka - 560010" },
+  { slug: "salem", name: "Salem", lat: 11.6643, lng: 78.146, area: "Swarnapuri", state: "Tamil Nadu", address: "270/1, Bharathi St, Swarnapuri, Salem, Tamil Nadu - 636004" },
+  { slug: "tiruvallur", name: "Tiruvallur", lat: 13.1431, lng: 79.908, area: "Kakkalur", state: "Tamil Nadu", address: "RSR Complex, Plot no 3689, Kakkalur Bypass Rd, next to ICICI Bank, near Indian Oil petrol pump, Ma. Po. Si. Nagar, Kakkalur, Tamil Nadu - 602001" },
+  { slug: "tirunelveli", name: "Tirunelveli", lat: 8.7139, lng: 77.7567, area: "Palayamkottai", state: "Tamil Nadu", address: "1st Floor, 20 A, Tiruchendur Main Rd, Murugankurichi, Tirunelveli-2, Palayamkottai, Tirunelveli, Tamil Nadu - 627002" },
+  { slug: "karaikal", name: "Karaikal", lat: 10.9254, lng: 79.838, area: "P.K. Salai", state: "Puducherry", address: "64/7 E, P.K. Salai, Karaikal, Puducherry - 609602" },
+  { slug: "thanjavur", name: "Thanjavur", lat: 10.787, lng: 79.1378, area: "Medical College Rd", state: "Tamil Nadu", address: "30, Medical College Rd, Rajjappa Nagar, Selvam Nagar, Eiswari Nagar, Thanjavur, Tamil Nadu - 613007" },
+  { slug: "trichy", name: "Trichy", lat: 10.805, lng: 78.6856, area: "Thillai Nagar", state: "Tamil Nadu", address: "Door no -23, Second Floor, Dina Tower, 9th Cross Rd E, Thillai Nagar, Tennur, Tiruchirappalli, Tamil Nadu - 620018" },
+  { slug: "tiruppur", name: "Tiruppur", lat: 11.1085, lng: 77.3411, area: "Marudhasalapuram", state: "Tamil Nadu", address: "Ground Floor, 164/18, SIVAHARI VALAGAM, Marudhasalapuram Main Road, M G R Nagar, Weavers Colony, Tiruppur, Tamil Nadu - 641603" }
+];
+
+const comingSoon = [{ slug: "thenkasi", name: "Thenkasi", state: "Tamil Nadu", lat: 8.96, lng: 77.315 }];
+
+module.exports = { hair, skin, blogs, gallery, awards, clinics, comingSoon };
+>>>>>>> master

@@ -3,7 +3,11 @@
    Run from the project root:  node tools/build-pages.js            */
 const fs = require("fs");
 const path = require("path");
+<<<<<<< HEAD
 const { hair, skin, blogs, gallery, awards, clinics } = require("./data");
+=======
+const { hair, skin, blogs, gallery, awards, clinics, comingSoon } = require("./data");
+>>>>>>> master
 
 const root = path.join(__dirname, "..");
 const write = (f, s) => fs.writeFileSync(path.join(root, f), s);
@@ -35,6 +39,10 @@ function navHtml(active, home = "index.html") {
   const sub = list => list.map(t => `<a href="${link(t)}"${t.slug === active ? ' class="active"' : ""}>${t.title}</a>`).join("");
   return `<nav class="main-nav" aria-label="Main">
       <a href="${home}"${on("home")}>Home</a>
+<<<<<<< HEAD
+=======
+      <a href="about.html"${on("about")}>About</a>
+>>>>>>> master
       <div class="nav-item has-sub">
         <a href="hair-care.html"${on("hair")} aria-haspopup="true">Hair Care <small>&#9662;</small></a>
         <div class="sub"><a href="hair-care.html">All Hair Treatments</a>${sub(hair)}</div>
@@ -43,6 +51,7 @@ function navHtml(active, home = "index.html") {
         <a href="skin-care.html"${on("skin")} aria-haspopup="true">Skin Care <small>&#9662;</small></a>
         <div class="sub"><a href="skin-care.html">All Skin Treatments</a>${sub(skin)}</div>
       </div>
+<<<<<<< HEAD
       <a href="about.html"${on("about")}>About</a>
       <a href="clinics.html"${on("clinics")}>Renew Centres</a>
       <a href="gallery.html"${on("gallery")}>Gallery</a>
@@ -53,6 +62,28 @@ function navHtml(active, home = "index.html") {
 const footer = `<footer class="footer">
   <div class="footer-grid">
     <div class="footer-contact"><a class="footer-logo" href="index.html" aria-label="Renew Plus home"><img src="assets/brand/logo-renew.png" alt="Renew Plus Hair and Skin Care logo"></a><a href="mailto:info@renewhairandskincare.com">info@renewhairandskincare.com</a><a href="tel:+919080086365">+91 90800 86365</a></div>
+=======
+      <a href="gallery.html"${on("gallery")}>Gallery</a>
+      <a href="blogs.html"${on("blogs")}>Blogs</a>
+      <a href="clinics.html"${on("clinics")}>Locations</a>
+    </nav>`;
+}
+
+/* social links shown in the footer (from renewhairandskincare.com/contact-us). Edit here, then run node tools/build-pages.js */
+const socials = [
+  ["Facebook", "https://www.facebook.com/profile.php?id=100071560623843", '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.5 21v-7.5H16l.5-3h-3V8.8c0-.9.3-1.5 1.6-1.5h1.5V4.6c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.5V21h3Z"/></svg>'],
+  ["Instagram", "https://www.instagram.com/renewplushairandskincare/", '<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>'],
+  ["WhatsApp", "https://wa.me/919080086365", '<svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16A8.5 8.5 0 1 1 8 19l-4.5 1.5Z"/><path d="M9.2 8.6c.2 2.4 2.8 5 5.2 5.2l1.2-1.2-1.9-.9-.8.7a4.4 4.4 0 0 1-2.1-2.1l.7-.8-.9-1.9-1.4 1Z" fill="currentColor" stroke="none"/></svg>']
+];
+
+const footer = `<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-contact"><a class="footer-logo" href="index.html" aria-label="Renew Plus home"><img src="assets/brand/logo-renew.png" alt="Renew Plus Hair and Skin Care logo"></a>
+      <a class="fc-line" href="mailto:support@renewhairandskincare.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 6 8-6"/></svg>support@renewhairandskincare.com</a>
+      <a class="fc-line" href="tel:+919080086365"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>+91 90800 86365</a>
+      <div class="footer-social" aria-label="Follow Renew Plus">${socials.map(([n, u, svg]) => `<a href="${u}" target="_blank" rel="noopener" aria-label="${n}" title="${n}">${svg}</a>`).join("")}</div>
+    </div>
+>>>>>>> master
     <div><h4>Hair Treatments</h4>${hair.map(t => `<a href="${link(t)}">${t.title}</a>`).join("")}</div>
     <div><h4>Skin Treatments</h4>${skin.map(t => `<a href="${link(t)}">${t.title}</a>`).join("")}</div>
     <div><h4>Quick Links</h4><a href="about.html">About</a><a href="about.html#franchise">Franchise</a><a href="blogs.html">Blogs</a><a href="clinics.html">Clinics</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="gallery.html">Gallery</a></div>
@@ -70,6 +101,7 @@ const header = active => `<header class="site-header" id="top">
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     ${navHtml(active)}
     <a class="nav-phone" href="tel:+919080086365"><svg class="ico"><use href="#i-support"/></svg>+91 90800 86365</a>
+<<<<<<< HEAD
     <a class="btn btn-primary nav-cta" href="index.html#contact">Book Consultation <span>&rarr;</span></a>
   </div>
 </header>`;
@@ -77,6 +109,18 @@ const header = active => `<header class="site-header" id="top">
 const themeOf = f => (f === "hair-care.html" || hair.some(t => link(t) === f)) ? "hair" : (f === "skin-care.html" || skin.some(t => link(t) === f)) ? "skin" : f.replace(".html", "");
 function page({ file, title, desc, active, body, scripts = "", extraCss = "" }) {
   write(file, `<!doctype html>
+=======
+    <a class="btn btn-primary nav-cta" href="index.html#contact">Contact <span>&rarr;</span></a>
+  </div>
+</header>`;
+
+/* the booking popup lives in index.html; every generated page reuses it so "Book Consultation" opens the form in place */
+const bookingDialog = () => (fs.readFileSync(path.join(root, "index.html"), "utf8").match(/<dialog class="booking"[\s\S]*?<\/dialog>/) || [""])[0];
+const withBooking = h => h.replace(/(?<!nav-cta" )href="index\.html#contact"/g, 'href="index.html#contact" data-book');
+const themeOf = f => (f === "hair-care.html" || hair.some(t => link(t) === f)) ? "hair" : (f === "skin-care.html" || skin.some(t => link(t) === f)) ? "skin" : f.replace(".html", "");
+function page({ file, title, desc, active, body, scripts = "", extraCss = "" }) {
+  write(file, withBooking(`<!doctype html>
+>>>>>>> master
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -84,29 +128,48 @@ function page({ file, title, desc, active, body, scripts = "", extraCss = "" }) 
   <meta name="description" content="${esc(desc)}">
   <title>${esc(title)} | Renew+ Hair &amp; Skin Care</title>
   <link rel="stylesheet" href="css/fonts.css">
+<<<<<<< HEAD
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
+=======
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png?v=2">
+  <link rel="apple-touch-icon" href="assets/favicon/favicon-180.png?v=2">
+>>>>>>> master
   <meta name="theme-color" content="#0a4a88">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages.css">
 ${extraCss}  <link rel="stylesheet" href="css/effects.css">
 </head>
 <body>
+<<<<<<< HEAD
 <div class="loader" id="loader" aria-hidden="true"><div class="loader-box"><img src="assets/brand/logo-renew.png" alt=""><span class="loader-ring"></span></div></div>
+=======
+<div class="loader" id="loader" aria-hidden="true"><div class="loader-box"><img src="assets/brand/logo-3d.png" alt=""><span class="loader-ring"></span></div></div>
+>>>>>>> master
 ${sprite}
 ${header(active)}
 <main class="page pg" data-theme="${themeOf(file)}">
 ${body}
 </main>
 ${footer}
+<<<<<<< HEAD
+=======
+${bookingDialog()}
+>>>>>>> master
 <script src="js/script.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/fx.js"></script>
 ${scripts}</body>
 </html>
+<<<<<<< HEAD
 `);
+=======
+`));
+>>>>>>> master
 }
 
 const banner = (eyebrow, h1, copy, crumbs, img) => `<section class="pg-hero">
@@ -188,10 +251,18 @@ function detail(t, group) {
   const gLabel = group === hair ? "Hair Care" : "Skin Care";
   const gFile = group === hair ? "hair-care.html" : "skin-care.html";
   const gi = group.indexOf(t);
+<<<<<<< HEAD
+=======
+  const steps = t.procedure.split(/(?<=[.!?])\s+/).filter(Boolean);
+>>>>>>> master
   const related = [1, 2, 3, 4].map(k => group[(gi + k) % group.length]);
   page({
     file: link(t), title: t.title, active: t.slug, desc: t.tagline,
     body: `<section class="pg-hero td-hero">
+<<<<<<< HEAD
+=======
+  <div class="td-hero-bg" style="background-image:url('${t.img}')" role="presentation"></div>
+>>>>>>> master
   <div class="inner td-hero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="${gFile}">${gLabel}</a><span>/</span>${t.title}</nav>
@@ -200,7 +271,10 @@ function detail(t, group) {
       <p class="pg-hero-copy">${t.tagline}</p>
       <div class="td-actions"><a class="btn btn-primary" href="index.html#contact">Book Consultation <span>&rarr;</span></a><a class="btn btn-light" href="tel:+919080086365">Call us</a></div>
     </div>
+<<<<<<< HEAD
     <figure class="td-photo"><img src="${t.img}" alt="${esc(t.title)} at Renew Plus"></figure>
+=======
+>>>>>>> master
   </div>
 </section>
 
@@ -208,6 +282,7 @@ function detail(t, group) {
   ${t.facts.map(f => `<div class="reveal"><small>${f[0]}</small><strong>${f[1]}</strong></div>`).join("\n  ")}
 </div></section>
 
+<<<<<<< HEAD
 <section class="section pg-sec">
   <div class="inner td-two">
     <div class="reveal"><p class="eyebrow">OVERVIEW</p><h2 class="h-md">What is ${t.title.replace(/ Treatment$/, "")}?</h2><p>${t.overview}</p></div>
@@ -231,10 +306,60 @@ function detail(t, group) {
     <div class="reveal">
       <p class="eyebrow">QUESTIONS</p><h2 class="h-md">Frequently asked</h2>
       <div class="faq">${t.faqs.map((f, i) => `<details${i === 0 ? " open" : ""}><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>
+=======
+<section class="section pg-sec td-intro">
+  <div class="inner td-intro-grid">
+    <div class="reveal">
+      <p class="eyebrow">OVERVIEW</p><h2 class="h-md">What is ${t.title.replace(/ Treatment$/, "")}?</h2>
+      <p>${t.overview}</p>
+      <p class="td-lead">${t.tagline}</p>
+      <a class="btn btn-primary" href="index.html#contact">Book Consultation <span>&rarr;</span></a>
+    </div>
+    <figure class="td-photo reveal"><img src="${t.img}" alt="${esc(t.title)} at Renew Plus" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="section pg-alt td-proc">
+  <div class="inner">
+    <div class="center-heading reveal"><p class="eyebrow">THE PROCEDURE</p><h2 class="h-md">How ${t.title.replace(/ Treatment$/, "")} works</h2></div>
+    <ol class="td-steps">${steps.map((x, i) => `<li class="reveal"><b>${String(i + 1).padStart(2, "0")}</b><p>${x}</p></li>`).join("")}</ol>
+  </div>
+</section>
+
+<section class="section pg-sec">
+  <div class="inner td-two">
+    <div class="reveal td-box">
+      <p class="eyebrow">WHO IS IT FOR</p><h2 class="h-md">Suitable candidates</h2><p>${t.candidates}</p>
+      <p class="td-note">Results vary from person to person. Your specialist will confirm the right plan after examining you.</p>
+    </div>
+    <div class="reveal td-box">
+      <p class="eyebrow">WHY CHOOSE IT</p><h2 class="h-md">Key benefits</h2>
+      <ul class="td-benefits td-benefits--list">${t.benefits.map(b => `<li><i class="ico-wrap"><svg class="ico"><use href="#i-check"/></svg></i><span>${b}</span></li>`).join("")}</ul>
+>>>>>>> master
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
+=======
+<section class="section pg-alt td-compare">
+  <div class="inner">
+    <div class="center-heading reveal"><p class="eyebrow">COMPARE OPTIONS</p><h2 class="h-md">${gLabel} treatments at a glance</h2><p>See how ${t.title.replace(/ Treatment$/, "")} fits alongside our other options.</p></div>
+    <div class="td-table-wrap reveal"><table class="td-table">
+      <thead><tr><th>Treatment</th><th>Type</th><th>Focus</th><th></th></tr></thead>
+      <tbody>${group.map(g => `<tr${g === t ? ' class="is-current"' : ""}><td><strong>${g.title}</strong></td><td>${g.kind}</td><td>${g.short}</td><td>${g === t ? "You are here" : `<a class="text-link" href="${link(g)}">View <span>&rarr;</span></a>`}</td></tr>`).join("")}</tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section pg-sec">
+  <div class="inner td-faq-wrap">
+    <div class="center-heading reveal"><p class="eyebrow">QUESTIONS</p><h2 class="h-md">Frequently asked</h2></div>
+    <div class="faq reveal">${t.faqs.map((f, i) => `<details${i === 0 ? " open" : ""}><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>
+  </div>
+</section>
+
+>>>>>>> master
 <section class="section pg-alt">
   <div class="inner">
     <div class="center-heading reveal"><p class="eyebrow">MORE ${gLabel.toUpperCase()}</p><h2 class="h-md">Related treatments</h2></div>
@@ -271,6 +396,7 @@ page({
 ${ctaBand("Experience award-winning care", "Meet our specialists and see why thousands of patients trust Renew Plus.")}`
 });
 
+<<<<<<< HEAD
 /* ---------- clinics ---------- */
 const mapUrl = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Renew Plus Hair and Skin Care, " + c.address)}`;
 const clinicCard = c => `<article class="cl-card reveal" id="${c.slug}" data-state="${esc(c.state)}">
@@ -302,6 +428,83 @@ page({
 </section>
 ${ctaBand("Visit your nearest centre", "Book a consultation and meet our specialists in person.")}`,
   scripts: `<script src="js/clinics.js"></script>\n`
+=======
+/* ---------- clinics / locations ---------- */
+const mapUrl = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Renew Plus Hair and Skin Care, " + c.address)}`;
+const states = ["All", ...new Set(clinics.map(c => c.state))];
+const locCard = (c, i) => `<article class="lc-card" id="${c.slug}" data-slug="${c.slug}" data-state="${esc(c.state)}" data-text="${esc((c.name + " " + c.area + " " + c.state + " " + c.address).toLowerCase())}"${i >= 6 ? " data-extra" : ""}>
+        <div class="lc-photo${c.img ? "" : " lc-photo--icon"}">${c.img ? `<img src="${c.img}" alt="Renew Plus clinic in ${c.name}" loading="lazy">` : `<img src="assets/cities/${c.slug}.png" alt="${c.name}" loading="lazy">`}${i === 0 ? `<span class="lc-tag"><svg class="ico"><use href="#i-pin"/></svg>Popular</span>` : ""}</div>
+        <div class="lc-body">
+          <h3><button type="button" class="lc-focus" data-focus="${c.slug}">${c.name}</button></h3>
+          <p class="lc-area"><svg class="ico"><use href="#i-pin"/></svg>${c.area}, ${c.name}</p>
+          <p class="lc-addr">${c.address}</p>
+          <p class="lc-open"><b>Open Today</b><span>9:00 AM &ndash; 8:00 PM</span></p>
+        </div>
+        <div class="lc-actions">
+          <a class="lc-ic lc-ic--dir" href="${mapUrl(c)}" target="_blank" rel="noopener" aria-label="Get directions to ${c.name}" title="Get directions"><svg viewBox="0 0 24 24"><path d="m3 11 18-8-8 18-2-8Z"/></svg></a>
+          <a class="lc-ic lc-ic--call" href="tel:+919080086365" aria-label="Call Renew Plus ${c.name}" title="Call"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></a>
+        </div>
+      </article>`;
+const mapData = JSON.stringify([...clinics.map(c => ({ slug: c.slug, name: c.name, lat: c.lat, lng: c.lng, soon: false, left: ["tiruvallur", "coimbatore", "trichy"].includes(c.slug) })), ...comingSoon.map(c => ({ slug: c.slug, name: c.name, lat: c.lat, lng: c.lng, soon: true }))]);
+page({
+  file: "clinics.html", title: "Locations", active: "clinics", extraCss: `  <link rel="stylesheet" href="css/leaflet.css">
+  <link rel="stylesheet" href="css/locations.css">
+`,
+  desc: "Find a Renew Plus Hair & Skin Care clinic near you – addresses, directions and map for all our locations.",
+  body: `<section class="lc-hero">
+  <div class="lc-hero-bg" role="presentation"></div>
+  <div class="lc-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>Locations</nav>
+    <p class="eyebrow">OUR CLINIC LOCATIONS</p>
+    <h1>Expert Care, <em>Closer to You</em></h1>
+    <p class="lc-hero-copy">Find a Renew+ clinic near you and experience advanced hair &amp; skin treatments with our expert specialists.</p>
+    <ul class="lc-feats"><li><i><svg class="ico"><use href="#i-pin"/></svg></i>Modern Clinics</li><li><i><svg class="ico"><use href="#i-users"/></svg></i>Expert Specialists</li><li><i><svg class="ico"><use href="#i-check"/></svg></i>Trusted Across Tamil Nadu &amp; Neighbouring States</li></ul>
+  </div>
+  <p class="lc-badge" aria-hidden="true">Same Expertise<br>More Locations</p>
+  <div class="lc-stats">
+    <div><i><svg class="ico"><use href="#i-pin"/></svg></i><b data-count="${clinics.length}">${clinics.length}</b><span>Locations</span></div>
+    <div><i><svg class="ico"><use href="#i-award"/></svg></i><b data-count="${new Set(clinics.map(c => c.state)).size}">${new Set(clinics.map(c => c.state)).size}</b><span>States</span></div>
+    <div><i><svg class="ico"><use href="#i-users"/></svg></i><b data-count="1000" data-suffix="+">1,000+</b><span>Happy Clients</span></div>
+    <div><i><svg class="ico"><use href="#i-tech"/></svg></i><b>Advanced</b><span>Technology</span></div>
+  </div>
+</section>
+
+<section class="lc-wrap">
+  <div class="lc-bar">
+    <label class="lc-search"><svg class="ico"><use href="#i-pin"/></svg><input type="search" id="lcSearch" placeholder="Search by city, area or PIN code" aria-label="Search locations" autocomplete="off"></label>
+    <button type="button" class="lc-reset" id="lcReset" aria-label="Reset filters" title="Reset filters">&#8635;</button>
+    <div class="lc-pills" role="tablist" aria-label="Filter by state">
+      ${states.map((c, i) => `<button type="button" role="tab" class="lc-pill${i === 0 ? " is-active" : ""}" data-filter="${esc(c)}" aria-selected="${i === 0}">${c} (${c === "All" ? clinics.length : clinics.filter(x => x.state === c).length})</button>`).join("\n      ")}
+    </div>
+    <div class="lc-view" role="group" aria-label="View"><button type="button" class="is-active" data-view="list">List View</button><button type="button" data-view="map">Map View</button></div>
+  </div>
+
+  <div class="lc-main" id="lcMain">
+    <div class="lc-list">
+      <p class="lc-count" id="lcCount" aria-live="polite"></p>
+      <div class="lc-cards" id="lcCards">
+      ${clinics.map(locCard).join("\n      ")}
+      </div>
+      <p class="lc-empty" id="lcEmpty" hidden>No locations match your search. Try another city, area or PIN code.</p>
+      <div class="lc-more"><button type="button" class="btn btn-light" id="lcMore">View All ${clinics.length} Locations <span>&rarr;</span></button></div>
+    </div>
+    <div class="lc-side">
+      <div class="lc-map-card">
+        <div class="lc-map-title"><h2>Our Locations</h2><p>${clinics.length} clinics across Tamil Nadu, Puducherry and Bengaluru.</p></div>
+        <div id="lcMap" class="lc-map" role="region" aria-label="Map of Renew Plus clinics"></div>
+        <div class="lc-soon"><svg class="ico"><use href="#i-sparkle"/></svg><div><b>Expanding for You</b><span>More locations coming soon!</span></div></div>
+      </div>
+      <div class="lc-help">
+        <div class="lc-help-text"><p class="eyebrow">NEED HELP CHOOSING?</p><h3>Talk to our team</h3><p>We&rsquo;ll help you find the nearest clinic and choose the right location for you.</p></div>
+        <a class="btn btn-primary" href="index.html#contact">Book Consultation <span>&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+  <p class="cl-contact">Call <a href="tel:+919080086365">+91 90800 86365</a> or <a href="tel:+919150606660">+91 91506 06660</a>, or write to <a href="mailto:support@renewhairandskincare.com">support@renewhairandskincare.com</a>.</p>
+</section>
+<script>window.RENEW_LOCATIONS = ${mapData};</script>`,
+  scripts: `<script src="js/vendor/leaflet.js"></script>\n<script src="js/clinics.js"></script>\n`
+>>>>>>> master
 });
 
 /* ---------- gallery ---------- */
@@ -333,7 +536,11 @@ ${ctaBand("Want results like these?", "Book a consultation to see what is possib
 
 /* ---------- blogs ---------- */
 const blogCats = [
+<<<<<<< HEAD
   { name: "Hair Care", slug: "hair-care", theme: "green", lead: "Hair loss, regrowth and restoration: expert answers before you start treatment." },
+=======
+  { name: "Hair Care", slug: "hair-care", theme: "blue", lead: "Hair loss, regrowth and restoration: expert answers before you start treatment." },
+>>>>>>> master
   { name: "Skin Care", slug: "skin-care", theme: "blue", lead: "Acne, pigmentation and skin rejuvenation: what works and what to expect." }
 ];
 const blogPost = (p, i) => `<article class="bp reveal">
